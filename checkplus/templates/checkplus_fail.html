@@ -1,0 +1,56 @@
+﻿<!--
+/********************************************************************************************************************************************
+		NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
+		
+		서비스명 : 체크플러스 - 안심본인인증 서비스
+		페이지명 : 체크플러스 - 실패 결과 페이지
+		
+		보안을 위해 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다. 
+*********************************************************************************************************************************************/
+-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NICE평가정보 - CheckPlus 안심본인인증 테스트</title>
+
+    <style>
+        body {
+            position: relative;
+            background: #F3F3F3;
+        }
+
+        h1 {
+          color: maroon;
+          margin-left: 40px;
+        }
+    </style>
+
+</head>
+<body>
+    <p>
+		본인인증이 실패하였습니다.<br>
+		[plaindata] {{ plaindata }} <br>
+    </p>
+    <table>
+        <tr>
+            <td>복호화한 시간</td>
+            <td>{{ ciphertime }} (YYMMDDHHMMSS)</td>
+        </tr>
+        <tr>
+            <td>요청 번호</td>
+            <td>{{ requestnumber }}</td>
+        </tr>            
+        <tr>
+            <td>본인인증 실패 코드</td>
+            <td>{{ errcode }}</td>
+        </tr>            
+        <tr>
+            <td>인증수단</td>
+            <td>{{ authtype }}</td>
+        </tr>
+        </tr>
+    </table>
+</body>
+</html>

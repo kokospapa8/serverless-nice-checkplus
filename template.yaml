@@ -1,0 +1,70 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 30
+
+Parameters:
+  Stage:
+    Type: String
+    AllowedValues:
+      - Stage
+      - Prod
+    Default: Prod
+
+Resources:
+  NiceCheckPlusFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: checkplus/
+      Handler: app.app
+      Runtime: python3.8
+      Description: checkplus flask
+      FunctionName: NiceCheckPlusFlask
+      Events:
+        CheckplusMain:
+          Type: Api
+          Properties:
+            Path: /checkplus_main
+            Method: get
+        CheckplusSuccess:
+          Type: Api
+          Properties:
+            Path: /checkplus_success
+            Method: get
+        CheckplusFail:
+          Type: Api
+          Properties:
+            Path: /checkplus_fail
+            Method: get
+        CheckplusSuccessPost:
+          Type: Api
+          Properties:
+            Path: /checkplus_success
+            Method: post
+        CheckplusFailPost:
+          Type: Api
+          Properties:
+            Path: /checkplus_fail
+            Method: post
+      Environment:
+        Variables:
+          REGION_NAME: !Ref AWS::Region
+          SITE_CODE: ""
+          SITE_PASSWORD: ""
+          API_GATEWAY_URL: ""
+
+Outputs:
+  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
+  # Find out more about other implicit resources you can reference within SAM
+  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
+  NiceCheckPlusFunction:
+    Description: "Daas Niceid Function ARN"
+    Value: !GetAtt NiceCheckPlusFunction.Arn
+  NiceCheckPlusHostURL:
+    Description: "API Gateway endpoint host URL with stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/${Stage}/"

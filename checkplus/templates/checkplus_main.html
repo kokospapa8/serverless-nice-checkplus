@@ -1,0 +1,40 @@
+﻿<!--
+/********************************************************************************************************************************************
+		NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
+		
+		서비스명 : 체크플러스 - 안심본인인증 서비스
+		페이지명 : 체크플러스 - 메인 호출 페이지
+*********************************************************************************************************************************************/
+-->
+
+<html>
+<head>
+   	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NICE평가정보 - CheckPlus 안심본인인증 테스트</title>	
+	<script>
+        window.name ="Parent_window";
+        
+        function fnPopup(){
+            window.open('', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+            document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
+            document.form_chk.target = "popupChk";
+            document.form_chk.submit();
+        }
+	</script>
+</head>
+<body>
+    {{ returnMsg }}<br><br>
+    업체정보 암호화 데이타 : [{{ enc_data }}]<br><br>
+
+    <!-- 안심본인인증 서비스 팝업 호출 form -->
+    <form name="form_chk" method="post">
+        <!-- 요청모드 (필수 데이터) -->
+        <input type="hidden" name="m" value="checkplusSerivce">
+        <!-- 업체정보 암호화 데이터 -->
+        <input type="hidden" name="EncodeData" value="{{ enc_data }}">
+        <!-- 팝업 호출 링크 -->	
+        <a href="javascript:fnPopup();"> CheckPlus 안심본인인증 Click</a>
+    </form>
+</body>
+</html>

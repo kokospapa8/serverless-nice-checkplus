@@ -1,0 +1,82 @@
+﻿<!--
+/********************************************************************************************************************************************
+		NICE평가정보 Copyright(c) KOREA INFOMATION SERVICE INC. ALL RIGHTS RESERVED
+		
+		서비스명 : 체크플러스 - 안심본인인증 서비스
+		페이지명 : 체크플러스 - 성공 결과 페이지
+
+		보안을 위해 샘플페이지는 서비스 적용 후 서버에서 삭제해 주시기 바랍니다. 
+*********************************************************************************************************************************************/
+-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NICE평가정보 - CheckPlus 안심본인인증 테스트</title>
+</head>
+<body>
+    <p>
+		본인인증이 완료되었습니다.<br>
+		[plaindata] {{ plaindata }} <br>
+	</p>	
+    <table>
+        <tr>
+            <td>복호화한 시간</td>
+            <td>{{ ciphertime }} (YYMMDDHHMMSS)</td>
+        </tr>
+        <tr>
+            <td>요청 번호</td>
+            <td>{{ requestnumber }}</td>
+        </tr>            
+        <tr>
+            <td>나신평응답 번호</td>
+            <td>{{ responsenumber }}</td>
+        </tr>            
+        <tr>
+            <td>인증수단</td>
+            <td>{{ authtype }}</td>
+        </tr>
+		<tr>
+            <td>성명</td>
+            <td>{{ name }}</td>
+            <!-- <td>{{ utfname }}</td> -->
+		</tr>
+		<tr>
+            <td>생년월일(YYYYMMDD)</td>
+            <td>{{ birthdate }}</td>
+        </tr>
+		<tr>
+            <td>성별</td>
+            <td>{{ gender }}</td>
+        </tr>
+		<tr>
+            <td>내/외국인정보</td>
+            <td>{{ nationalinfo }}</td>
+        </tr>
+		<tr>
+            <td>DI(64 byte)</td>
+            <td>{{ dupinfo }}</td>
+        </tr>
+		<tr>
+            <td>CI(88 byte)</td>
+            <td>{{ conninfo }}</td>
+        </tr>
+        <tr>
+			<td>휴대폰번호</td>
+            <td>{{ mobileno }}</td>
+        </tr>
+		<tr>
+			<td>통신사</td>
+			<td>{{ mobileco }}</td>
+        </tr>
+		<tr>
+			<td colspan="2">
+				인증 결과값은 당사 시스템에 설정된 항목만 리턴됩니다. <br><br>
+				필요한 항목이 null로 리턴되는 경우 관리/계약 담당자나 계약팀(02-2122-4615)으로 연락해<br>
+				해당 항목이 리턴되도록 신청해주시기 바랍니다.<br>
+			</td>
+		</tr>
+    </table>
+</body>
+</html>
