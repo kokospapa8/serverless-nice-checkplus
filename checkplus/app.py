@@ -27,10 +27,10 @@ def checkplus_main():
     cb_encode_path = './CPClient_64bit'
 
     # 인증성공 시 결과데이터 받는 리턴URL (방식:절대주소, 필수항목:프로토콜)
-    returnurl = f'https://{API_GATEWAY_URL}/checkplus_success'
+    returnurl = f'https://{API_GATEWAY_URL}checkplus_success'
 
     # 인증실패 시 결과데이터 받는 리턴URL (방식:절대주소, 필수항목:프로토콜)
-    errorurl = f'https://{API_GATEWAY_URL}/checkplus_fail'
+    errorurl = f'https://{API_GATEWAY_URL}checkplus_fail'
 
     # 팝업화면 설정
     authtype = ''  # 인증타입 (공백:기본 선택화면, X:공인인증서, M:핸드폰, C:카드)
