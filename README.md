@@ -1,5 +1,5 @@
 # Serverless nice 체크 플러스
-[!logo](resources/niceid_logo.png)
+![logo](resources/niceid_logo.png)
 
 Nice 아이디 [휴대폰본인확인](https://www.niceid.co.kr/prod_mobile.nc) 모듈을 AWS SAM을 이용해 lambda로 바로 배포할 수 있는 패키지입니다
 
@@ -62,17 +62,17 @@ sam local invoke -e events/event.json
 sam deploy --guided
 ```
 배포 설정은 다음을 참조한다.
-[!deploy](resources/deploy.png)
+![deploy](resources/deploy.png)
 
 
 ## 배포후 환경 설정
 배포가 완료되면 Output의 `NiceCheckPlusHostURL` 의 host URL을 복사한다. 
-[!ouput](resources/output.png)
+![ouput](resources/output.png)
 
 
 AWS console을 접속해서 배포를 확인한다.
-[!function](resources/function.png)
-[!gateway](resources/gateway.png)
+![function](resources/function.png)
+![gateway](resources/gateway.png)
 
 
 AWS 콘솔의 lambda > configuration > environment에서 환경 변수를 설정한다.
@@ -80,9 +80,9 @@ AWS 콘솔의 lambda > configuration > environment에서 환경 변수를 설정
 - SITE_CODE: 계약시 제공받는 값
 - SITE_PASSWORD: 계약시 제공받는 값
 
-[!env](resources/env.png)
+![env](resources/env.png)
 
 ## 확인
 브라우저를 열고 `NiceCheckPlusHostURL`/checkplus_main 으로 이동한다.(예제에서는 https://ain06kdo9d.execute-api.ap-northeast-2.amazonaws.com/Prod/checkplus_main)
 
-[!main](resources/main.png)
+![main](resources/main.png)
