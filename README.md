@@ -1,7 +1,7 @@
 # Serverless nice 체크 플러스
 ![logo](resources/niceid_logo.png)
 
-Nice 아이디 [휴대폰본인확인](https://www.niceid.co.kr/prod_mobile.nc) 모듈을 AWS SAM을 이용해 lambda로 바로 배포할 수 있는 패키지입니다
+[NICE 안심본인인증](https://www.niceid.co.kr/prod_mobile.nc) 서비스 AWS SAM을 이용해 lambda로 바로 배포할 수 있는 패키지입니다
 
 기본적으로 업체에서 제공하는 샘플코드를 바로 사용할 수 있게 패키징했습니다. 
 Python flask 사용합니다. 
@@ -38,7 +38,7 @@ curl https://pyenv.run | bash
 exec "$SHELL" 
 pyenv install 3.8.8
 pyenv virtualenv 3.8.8 nice-checkplus
-pyenv activate nice-checkplus
+pyenv activate nice-checkplus를
 pip install -r checkplus/requirements.txt 
 
 ```
@@ -86,3 +86,6 @@ AWS 콘솔의 lambda > configuration > environment에서 환경 변수를 설정
 브라우저를 열고 `NiceCheckPlusHostURL`/checkplus_main 으로 이동한다.(예제에서는 https://ain06kdo9d.execute-api.ap-northeast-2.amazonaws.com/Prod/checkplus_main)
 
 ![main](resources/main.png)
+
+성공결과
+![response](resources/response.png)
