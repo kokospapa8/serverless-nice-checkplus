@@ -38,7 +38,7 @@ curl https://pyenv.run | bash
 exec "$SHELL" 
 pyenv install 3.8.8
 pyenv virtualenv 3.8.8 nice-checkplus
-pyenv activate nice-checkplus를
+pyenv activate nice-checkplus
 pip install -r checkplus/requirements.txt 
 
 ```
